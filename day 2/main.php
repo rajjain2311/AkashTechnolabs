@@ -36,13 +36,13 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="/Internship_project/day 1/image/coding_1.jpg" style="height: 300px;" class="d-block w-100" alt="...">
+                <img src="/Internship_project/day 2/image/coding_1.jpg" style="height: 300px;" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="/Internship_project/day 1/image/coding_2.jpg" style="height: 300px;" class="d-block w-100" alt="...">
+                <img src="/Internship_project/day 2/image/coding_2.jpg" style="height: 300px;" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="/Internship_project/day 1/image/coding_3.jpg" style="height: 300px;" class="d-block w-100" alt="...">
+                <img src="/Internship_project/day 2/image/coding_3.jpg" style="height: 300px;" class="d-block w-100" alt="...">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -59,41 +59,41 @@
         <h2 class="text-center">iDiscuss-Browse categories</h2>
         <div class="row">
 
-            <?php 
+            <?php
             $sql = " SELECT * FROM `categories`";
-            $result = mysqli_query($conn,$sql);
+            $result = mysqli_query($conn, $sql);
             while ($row = mysqli_fetch_assoc($result)) {
-                
-              $id = $row['category_id'];
-              $cat = $row['category_name'];
-              $desc = $row['category_description'];
+
+                $id = $row['category_id'];
+                $cat = $row['category_name'];
+                $desc = $row['category_description'];
                 echo '  
                 <div class="col-md-4 my-2">
                 <div class="card " style="width: 18rem;">
-                                <img src="/Internship_project/day 2/image/'.$cat.'.jpg"   style="height:200px;"  class="card-img-top" alt="...">
+                                <img src="/Internship_project/day 2/image/' . $cat . '.jpg"   style="height:200px;"  class="card-img-top" alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-title"><a href="threadlist.php?catid='.$id.'">'.$cat.'</a></h5>
+                                    <h5 class="card-title"><a href="threadlist.php?catid=' . $id . '">' . $cat . '</a></h5>
                                     
-                                    <p class="card-text">'.substr($desc,0,50).'..... </p>
-                                    <a href="threadlist.php?catid='.$id.'" class="btn btn-primary">View Threads</a>
+                                    <p class="card-text">' . substr($desc, 0, 50) . '..... </p>
+                                    <a href="threadlist.php?catid=' . $id . '" class="btn btn-primary">View Threads</a>
                                 </div>
                                
                             </div>
                         </div>
                         ';
-                    }
-                    
-                    ?>
+            }
+
+            ?>
         </div>
 
 
     </div>
 
 
-    
 
 
-   
+
+
     <?php include 'partials/footer.php' ?>
 
 
