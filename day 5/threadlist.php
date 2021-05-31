@@ -36,7 +36,26 @@
         $catedesc = $row['category_description'];
     }
     ?>
-    
+     <?php
+    $method = $_SERVER['REQUEST_METHOD'];
+    $showAlert = false;
+    if ($method == 'POST') {
+        $th_title = $_POST['title'];
+        $th_desc = $_POST['desc'];
+
+        $th_title  =str_replace("<","&lt",$th_title);
+        $th_title  =str_replace(">","&gt",$th_title);
+
+        $th_desc  =str_replace("<","&lt",$th_desc);
+        $th_desc  =str_replace(">","&gt",$th_desc);
+        $sno = $_POST['sno'];
+        $sql = "INSERT INTO `threads` ( `threads_title`, `threads_desc`, `threads_cat_id`, `threads_user_id`, `timestamp`) VALUES ('$th_title', '$th_desc', '$id', '$sno' , current_timestamp())";
+        $result = mysqli_query($conn, $sql);
+        $showAlert = true;
+       
+    }
+
+    ?>
 
 
     <div class="container my-4">
